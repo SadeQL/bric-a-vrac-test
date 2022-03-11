@@ -1,15 +1,27 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
+import { StyleSheet, TextInput, SafeAreaView, Button} from 'react-native';
+import React from 'react';
 import { Text, View } from '../components/Themed';
 
 export default function Update() {
+    const [input, setInput] = React.useState("");
+    const displayInput = ()=>{
+      alert(input)
+    }
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Update</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/Update.tsx" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View>
+      <TextInput 
+      placeholder= 'Type anything you want' 
+      onChangeText={nextInput => setInput(nextInput)} 
+      defaultValue={input} 
+      multiline={true}
+      numberOfLines={15}/>
+    
+      <Button title="Submit" onPress={()=> displayInput()}></Button>
+
+     
+      </View>
+    </SafeAreaView>
   );
 }
 
