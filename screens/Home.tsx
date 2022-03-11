@@ -1,6 +1,4 @@
 import { StyleSheet, Image } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
@@ -9,12 +7,8 @@ import { RootTabScreenProps } from '../types';
 export default function DisplayLogoName(){
   return(
     <View style={styles.container}>
-
       <Image style = {styles.logo} source = {require('../assets/images/logo.png')} />
-
       <Text style={styles.name}>Quentin LEE</Text> 
-
-     
     </View>
     
   )

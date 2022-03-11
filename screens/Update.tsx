@@ -4,22 +4,23 @@ import { Text, View } from '../components/Themed';
 
 export default function Update() {
     const [input, setInput] = React.useState("");
-    const displayInput = ()=>{
-      alert(input)
+    const [textDisplay, setTextDisplay] = React.useState("");
+    const displayInput = () => {
+      setTextDisplay(input)
     }
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
       <TextInput 
-      placeholder= 'Type anything you want' 
-      onChangeText={nextInput => setInput(nextInput)} 
+      placeholder= 'Type anything you want!' 
+      onChangeText={value => setInput(value)} 
       defaultValue={input} 
       multiline={true}
-      numberOfLines={15}/>
-    
+      />
       <Button title="Submit" onPress={()=> displayInput()}></Button>
-
-     
+      {/* <Text>{input}</Text> */}
+      <Text>{textDisplay}</Text>
       </View>
     </SafeAreaView>
   );
