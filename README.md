@@ -1,4 +1,4 @@
-# Bric-A-Vrac-Tech-Test
+# Bric A Vrac Technical Test
 
 This app was built with one of the provided template (the one with the bottom tab bar). The current design is not responsive for light/dark screen modes in terms of text color of the user input field. The aimed screen size of this app is **412 x 732**.
 
