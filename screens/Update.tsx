@@ -1,5 +1,6 @@
 import { StyleSheet, TextInput, SafeAreaView, Button } from "react-native";
 import React from "react";
+import { useState } from "react"; 
 import { Text, View } from "../components/Themed";
 import { useRoute } from "@react-navigation/native";
 
@@ -7,8 +8,8 @@ export default function Update({ navigation }: { navigation: any }) {
   const path = useRoute();
   console.log(path.name);
 
-  const [input, setInput] = React.useState("");
-  const [textDisplay, setTextDisplay] = React.useState("");
+  const [input, setInput] = useState("");
+  const [textDisplay, setTextDisplay] = useState("");
   const displayInput = () => {
     setTextDisplay(input);
   };
@@ -17,10 +18,9 @@ export default function Update({ navigation }: { navigation: any }) {
     <SafeAreaView style={styles.container}>
       <View>
         <TextInput
-          style={styles.text}
+          style={styles.inputText}
           placeholder="Type anything you want!"
           onChangeText={(value) => setInput(value)}
-          defaultValue={input}
           multiline={true}
         />
         <Button
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  inputText:{
+    fontSize: 15,
   },
   text: {
     fontSize: 20,
