@@ -1,17 +1,8 @@
 import { StyleSheet, Image } from 'react-native';
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
-import { useEffect, useState } from 'react';
-
-
 
 export default function Home(){
-  const [page, setPage] = useState('Home')
-  useEffect(()=>{ 
-    
-      console.log(page)
-    
-  })
+ 
   return(
     <View style={styles.container}>
       <Image style = {styles.logo} source = {require('../assets/images/logo.png')} />
