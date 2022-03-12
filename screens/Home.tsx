@@ -1,7 +1,11 @@
 import { StyleSheet, Image } from 'react-native';
 import { Text, View } from '../components/Themed';
+import { useRoute } from '@react-navigation/native';
+
 
 export default function Home(){
+  const path = useRoute();
+  console.log(path.name)
  
   return(
     <View style={styles.container}>
@@ -10,7 +14,6 @@ export default function Home(){
     </View>
   )
 }
-
 
 const styles = StyleSheet.create({
   container: {

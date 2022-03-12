@@ -1,28 +1,37 @@
-import { StyleSheet, TextInput, SafeAreaView, Button} from 'react-native';
-import React from 'react';
-import { Text, View } from '../components/Themed';
+import { StyleSheet, TextInput, SafeAreaView, Button } from "react-native";
+import React from "react";
+import { Text, View } from "../components/Themed";
+import { useRoute } from "@react-navigation/native";
 
+export default function Update({ navigation }: { navigation: any }) {
+  const path = useRoute();
+  console.log(path.name);
 
-export default function Update({navigation}: {navigation: any}) {
- 
-    const [input, setInput] = React.useState("");
-    const [textDisplay, setTextDisplay] = React.useState("");
-    const displayInput = () => {
-      setTextDisplay(input)
-    }
+  const [input, setInput] = React.useState("");
+  const [textDisplay, setTextDisplay] = React.useState("");
+  const displayInput = () => {
+    setTextDisplay(input);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <View>
-      <TextInput 
-      placeholder= 'Type anything you want!' 
-      onChangeText={value => setInput(value)} 
-      defaultValue={input} 
-      multiline={true}
-      />
-      <Button title="Submit" onPress={()=> {displayInput(); navigation.navigate('Show', {paramKey: input})}}></Button>
+        <TextInput
+          style={styles.text}
+          placeholder="Type anything you want!"
+          onChangeText={(value) => setInput(value)}
+          defaultValue={input}
+          multiline={true}
+        />
+        <Button
+          title="Submit"
+          onPress={() => {
+            displayInput();
+            navigation.navigate("Show", { paramKey: input });
+          }}
+        ></Button>
 
-      <Text style= {styles.text}>{textDisplay}</Text>
+        <Text style={styles.text}>{textDisplay}</Text>
       </View>
     </SafeAreaView>
   );
@@ -31,12 +40,11 @@ export default function Update({navigation}: {navigation: any}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   text: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-
 });

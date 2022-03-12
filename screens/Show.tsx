@@ -1,8 +1,11 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
+import { useRoute } from '@react-navigation/native';
 
 
 export default function Show({route}:{route: any}) {
+  const path = useRoute();
+  console.log(path.name)
  
   return (
     <View style={styles.container}>
