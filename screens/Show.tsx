@@ -2,13 +2,14 @@ import { StyleSheet, Button } from "react-native";
 import { Text, View } from "../components/Themed";
 import { useRoute } from "@react-navigation/native";
 
-export default function Show({ route }: { route: any }) {
+export default function Show({ route, navigation }: { route: any, navigation:any }) {
   const path = useRoute();
   console.log(path.name);
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{route.params.paramKey}</Text>
+      <Button title='Go back' onPress={()=>navigation.navigate('Update')} />
     </View>
   );
 }
